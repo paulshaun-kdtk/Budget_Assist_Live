@@ -7,4 +7,3 @@
 #       icon { Faker::Lorem.word }
 #     end
 #   end
-  

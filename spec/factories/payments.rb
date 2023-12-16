@@ -5,4 +5,3 @@
 #       association :group, factory: :group
 #     end
 #   end
-  

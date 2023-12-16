@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:update, :destroy]
-  before_action :set_user, only: [:create, :show, :edit, :update, :destroy]
+  before_action :set_group, only: %i[update destroy]
+  before_action :set_user, only: %i[create show edit update destroy]
 
   def index
     @user = current_user
@@ -17,7 +17,7 @@ class GroupsController < ApplicationController
     @user = current_user
     @group = Group.new
   end
-  
+
   def create
     @group = Group.new(group_params)
     @group.user = current_user.name

@@ -1,0 +1,47 @@
+<div class="container">
+
+<h1 class="text-primary"> Welcome Budget Assist</h1>
+
+<h4> Transform the way your money is used </h4>
+
+</div>
+
+<div class="links">
+    <% if @user %>
+        <%= link_to "Home", users_path %>
+    <% else %>
+        <%= link_to "Login", new_user_session_path %>
+    <% end %>
+</div>
+
+<style>
+    .container{
+        margin: 0 auto;
+        background-color: blue;
+        padding: 20px;
+        height: 60%;
+    }
+
+    .container  h1 {
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .container h4 {
+        text-align: center;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .links {
+        text-align: center;
+        padding: 20px;
+    }
+
+    body {
+        background-color: #f2f2f2;
+    }
+
+</style>
