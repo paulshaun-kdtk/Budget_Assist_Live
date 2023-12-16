@@ -4,10 +4,10 @@ RSpec.describe Group, type: :model do
   describe '#recent_payments' do
     it 'returns the specified number of recent payments' do
       group = Group.create(name: 'Test Group')
-      payment1 = Payment.create(group: group, created_at: 1.day.ago)
-      payment2 = Payment.create(group: group, created_at: 2.days.ago)
-      payment3 = Payment.create(group: group, created_at: 3.days.ago)
-      payment4 = Payment.create(group: group, created_at: 4.days.ago)
+      payment1 = Payment.create(group:, created_at: 1.day.ago)
+      payment2 = Payment.create(group:, created_at: 2.days.ago)
+      payment3 = Payment.create(group:, created_at: 3.days.ago)
+      payment4 = Payment.create(group:, created_at: 4.days.ago)
 
       recent_payments = group.recent_payments(3)
 
@@ -16,8 +16,8 @@ RSpec.describe Group, type: :model do
 
     it 'returns all payments if the specified limit is greater than the total number of payments' do
       group = Group.create(name: 'Test Group')
-      payment1 = Payment.create(group: group, created_at: 1.day.ago)
-      payment2 = Payment.create(group: group, created_at: 2.days.ago)
+      payment1 = Payment.create(group:, created_at: 1.day.ago)
+      payment2 = Payment.create(group:, created_at: 2.days.ago)
 
       recent_payments = group.recent_payments(5)
 
@@ -28,9 +28,9 @@ RSpec.describe Group, type: :model do
   describe '#total_amount' do
     it 'returns the sum of all payment amounts for the group' do
       group = Group.create(name: 'Test Group')
-      payment1 = Payment.create(group: group, amount: 50)
-      payment2 = Payment.create(group: group, amount: 30)
-      payment3 = Payment.create(group: group, amount: 20)
+      payment1 = Payment.create(group:, amount: 50)
+      payment2 = Payment.create(group:, amount: 30)
+      payment3 = Payment.create(group:, amount: 20)
 
       total_amount = group.total_amount
 

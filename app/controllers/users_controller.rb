@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
-  
   def index
     @groups = Group.all
     @user = current_user
   end
-  
+
   def show
     @user = current_user
   end
@@ -33,7 +32,7 @@ class UsersController < ApplicationController
     @group.destroy
     redirect_to root_path, notice: 'Category destroyed successfully.'
   end
-   
+
   def group_params
     params.require(:group).permit(:name, :icon)
   end

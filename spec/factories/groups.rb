@@ -5,4 +5,3 @@
 #       user { Faker::Lorem.word}
 #     end
 # end
-  
