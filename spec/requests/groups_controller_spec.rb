@@ -1,12 +1,10 @@
-# spec/controllers/groups_controller_spec.rb
-
 require 'rails_helper'
 
 RSpec.describe GroupsController, type: :controller do
   describe 'GET #index' do
     it 'assigns user and groups' do
-      user = create(:user)
-      group = create(:group, user: user)
+      user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
+      group = Group.create(name: 'Group 1', user: user)
 
       get :index
       expect(assigns(:user)).to eq(user)
@@ -17,8 +15,8 @@ RSpec.describe GroupsController, type: :controller do
 
   describe 'GET #show' do
     it 'assigns group, recent_payments, and total_amount' do
-      user = create(:user)
-      group = create(:group, user: user)
+      user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
+      group = Group.create(name: 'Group 1', user: user)
 
       get :show, params: { id: group.id }
       expect(assigns(:group)).to eq(group)
@@ -30,7 +28,7 @@ RSpec.describe GroupsController, type: :controller do
 
   describe 'GET #new' do
     it 'assigns user and a new group' do
-      user = create(:user)
+      user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
 
       get :new
       expect(assigns(:user)).to eq(user)
@@ -42,7 +40,7 @@ RSpec.describe GroupsController, type: :controller do
   describe 'POST #create' do
     context 'with valid parameters' do
       it 'creates a new group' do
-        user = create(:user)
+        user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
 
         expect do
           post :create, params: { group: { name: 'New Group', user: user.name } }
@@ -56,7 +54,7 @@ RSpec.describe GroupsController, type: :controller do
 
     context 'with invalid parameters' do
       it 'does not create a new group' do
-        user = create(:user)
+        user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
 
         expect do
           post :create, params: { group: { name: nil, user: user.name } }
@@ -69,8 +67,8 @@ RSpec.describe GroupsController, type: :controller do
 
   describe 'GET #edit' do
     it 'assigns group' do
-      user = create(:user)
-      group = create(:group, user: user)
+      user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
+      group = Group.create(name: 'Group 1', user: user)
 
       get :edit, params: { id: group.id }
       expect(assigns(:group)).to eq(group)
@@ -80,8 +78,8 @@ RSpec.describe GroupsController, type: :controller do
 
   describe 'PATCH #update' do
     it 'updates the group' do
-      user = create(:user)
-      group = create(:group, user: user)
+      user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
+      group = Group.create(name: 'Group 1', user: user)
 
       patch :update, params: { id: group.id, group: { name: 'Updated Group', user: user.name } }
       group.reload
@@ -91,8 +89,8 @@ RSpec.describe GroupsController, type: :controller do
     end
 
     it 'does not update the group with invalid parameters' do
-      user = create(:user)
-      group = create(:group, user: user)
+      user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
+      group = Group.create(name: 'Group 1', user: user)
 
       patch :update, params: { id: group.id, group: { name: nil, user: user.name } }
       expect(response).to render_template(:edit)
@@ -101,8 +99,8 @@ RSpec.describe GroupsController, type: :controller do
 
   describe 'DELETE #destroy' do
     it 'destroys the group' do
-      user = create(:user)
-      group = create(:group, user: user)
+      user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
+      group = Group.create(name: 'Group 1', user: user)
 
       expect do
         delete :destroy, params: { id: group.id }
