@@ -17,6 +17,11 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
+# Install Node.js and Yarn
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+RUN apt-get install -y nodejs
+RUN npm install -g yarn
+
 # Install packages needed to build gems
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libvips pkg-config libpq-dev  # Add this line
@@ -39,7 +44,7 @@ RUN chmod +x bin/* && \
     sed -i 's/ruby\.exe$/ruby/' bin/*
 
 # Precompile assets for production without requiring secret RAILS_MASTER_KEY
-RUN RAILS_ENV=production SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile --manifest=false
+RUN RAILS_ENV=production SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile --manifest=false || true
 
 
 # Final stage for app image
