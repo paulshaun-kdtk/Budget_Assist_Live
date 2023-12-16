@@ -16,9 +16,9 @@
             <thead>
               <tr>
                 <th scope="col"></th>
+                <th scope="col">Icon</th>
                 <th scope="col">Name</th>
                 <th scope="col">User</th>
-                <th scope="col">Icon</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -29,13 +29,13 @@
               <% @groups.each do |group| %>
                 <tr>
                   <th scope="row"></th>
-                  <td><%= group.name %></td>
-                  <td><%= group.user %></td>
                   <td>
                   <span>
                   <%= image_tag group.icon, style: "width: 150px; height: 100px;" if group.icon.attached? %>
                   </span>
                   </td>
+                  <td><%= group.name %></td>
+                  <td><%= group.user %></td>
                   <td><%= link_to 'Detail', user_group_path(@user, group) %></td>
                   <td>  <%= link_to "Edit", edit_user_group_path(@user, group) %> </td>
                   <td><%= link_to 'Destroy', user_group_path(@user, group), method: :delete, data: { confirm: 'Are you sure?' } %></td>
