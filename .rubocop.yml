@@ -17,8 +17,23 @@ Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   Max: 70
+Style/RedundantFetchBlock:
+  Enabled: false
+Style/GlobalStdStream:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Style/SpecialGlobalVars:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  
+
+
 
 Style/Documentation:
+  Enabled: false
+Style/SymbolProc:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
