@@ -43,13 +43,10 @@ Style/GlobalVars:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-
 Metrics/CyclomaticComplexity:
   Enabled: false
 Style/TrivialAccessors:
   Enabled: false
-Style/FrozenStringLiteralComment:
-  EnforcedStyle: never
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
