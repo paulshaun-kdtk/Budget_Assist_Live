@@ -44,23 +44,22 @@ ARG RAILS_MASTER_KEY
 ENV RAILS_MASTER_KEY=$RAILS_MASTER_KEY
 RUN RAILS_ENV=production SECRET_KEY_BASE_DUMMY=1 RAILS_MASTER_KEY=$RAILS_MASTER_KEY ./bin/rails assets:precompile --manifest=false || true
 
-
-
 # Final stage for app image
 FROM base
 
 # Install packages needed for deployment
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+RUN apt-get update -qq \
+    && apt-get install --no-install-recommends -y curl libsqlite3-0 libvips libpq5 \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
 
 # Run and own only the runtime files as a non-root user for security
-RUN useradd rails --create-home --shell /bin/bash && \
-    chown -R rails:rails db log storage tmp
+RUN useradd rails --create-home --shell /bin/bash \
+    && chown -R rails:rails db log storage tmp
+
 USER rails:rails
 
 # Entrypoint prepares the database.
