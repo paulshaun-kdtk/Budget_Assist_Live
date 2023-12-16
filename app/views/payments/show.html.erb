@@ -1,0 +1,15 @@
+<div class="container mx-auto" >
+  <div class="card row-15 col-12 text-center bg-light" >
+<p style="color: green"><%= notice %></p>
+
+<%= render @payment %>
+
+<div>
+  <%= link_to "Edit this payment", edit_payment_path(@payment) %> |
+  <%= link_to "Back to payments", payments_path %>
+
+  <%= button_to "Destroy this payment", @payment, method: :delete %>
+</div>
+ 
+</div>
+</div>

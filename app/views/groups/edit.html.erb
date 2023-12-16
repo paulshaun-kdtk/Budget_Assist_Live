@@ -1,0 +1,10 @@
+<h1>Editing Category <%= @group.name %> </h1>
+
+<%= render "form", group: @group %>
+
+<br>
+
+<div>
+  <%= link_to "Show this group", user_group_path(@group) %> |
+  <%= link_to "Back to groups", users_path %>
+</div>

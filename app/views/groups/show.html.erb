@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container row-30 col-15 mx-auto text-center">
+<div class="card mx-auto" style="padding: 20px;" >
+<div class="d-flex mb-3" style="justify-content: space-between">  
+  <%= image_tag @group.icon, style: "width: 150px; height: 100px;" if @group.icon.attached? %>
+  <h1> <%=  @group.name %> </h1>
+  <p>Total: $ <%= @total_amount %></p>
+</div>
+
+
+  <h2>Recent transactions</h2>
+      <% @recent_payments.each do |payment| %>
+      <ul class="list-group row">
+      <li class="list-group-item d-flex" style="justify-content: space-evenly;"><span> <%= payment.name %> </span> | <span> $ <%= payment.amount %> </span> </li>
+      </ul>
+      <% end %>
+
+  <%= link_to "view all transactions", user_group_payments_path(@user, @group) %> 
+  
+  <%= link_to "Back", users_path %>
+
+  <div>
+</div>
