@@ -27,9 +27,6 @@ RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
 
-# ...
-RUN gem install bootstrap-sass -v 3.4.1
-
 # Copy application code
 COPY . .
 
