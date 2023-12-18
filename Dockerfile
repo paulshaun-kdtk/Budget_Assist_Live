@@ -47,9 +47,9 @@ RUN RAILS_ENV=production SECRET_KEY_BASE_DUMMY=1 RAILS_MASTER_KEY=$RAILS_MASTER_
 # Final stage for app image
 FROM base
 
-# Install packages needed for deployment
+# Install packages needed for deployment, including Node.js for ExecJS
 RUN apt-get update -qq \
-    && apt-get install --no-install-recommends -y curl libsqlite3-0 libvips libpq5 \
+    && apt-get install --no-install-recommends -y curl libsqlite3-0 libvips libpq5 nodejs \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 # Copy built artifacts: gems, application
