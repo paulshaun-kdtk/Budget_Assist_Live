@@ -27,7 +27,6 @@ RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile 
 
-RUN bundle exec rake assets:precompile RAILS_ENV=production
 
 # Copy application code
 COPY . .
@@ -62,6 +61,8 @@ COPY --from=build /rails /rails
 # Run and own only the runtime files as a non-root user for security
 RUN useradd rails --create-home --shell /bin/bash \
     && chown -R rails:rails db log storage tmp
+
+RUN bundle exec rake assets:precompile RAILS_ENV=production
 
 USER rails:rails
 
