@@ -21,8 +21,8 @@ production:
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: <%= budget_app_bjvy_user
+  username: budget_app_bjvy_user
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= dpg-cm06e6ta73kc73c13410-a
+  host:  dpg-cm06e6ta73kc73c13410-a
   port: 5432
   database: <%= ENV['DATABASE_NAME'] %>
