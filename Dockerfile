@@ -25,9 +25,9 @@ RUN apt-get update -qq && \
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
-    bundle exec bootsnap precompile --gemfile \
-    bundle exec rake assets:precompile RAILS_ENV=production
+    bundle exec bootsnap precompile --gemfile 
 
+RUN bundle exec rake assets:precompile RAILS_ENV=production
 
 # Copy application code
 COPY . .
