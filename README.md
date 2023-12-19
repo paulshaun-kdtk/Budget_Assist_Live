@@ -10,7 +10,6 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Budget-App ](#Budget-App)
-- [Video-Presentation](#Live-Presentaton)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -32,6 +31,8 @@
 **Budget-App** is a web app designed to assist users with their personal finances
 
 **Live-Presentation** : https://www.loom.com/share/b12d950563214ce0a0ada22e760b77da?sid=bf358665-afbb-4a48-a3e3-f3f90ef54ca0
+
+**Live App** : https://budget-app-b2jg.onrender.com/
 
 ## 🛠 Built With <a name="built-with"></a>
 

@@ -22,6 +22,7 @@
                 <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col"></th>
+                <th scope="col"></th>
 
               </tr>
             </thead>
@@ -36,6 +37,7 @@
                   </td>
                   <td><%= group.name %></td>
                   <td><%= group.user %></td>
+                  <td><%= link_to 'New Category', new_user_group_path(@user) %></td>
                   <td><%= link_to 'Detail', user_group_path(@user, group) %></td>
                   <td>  <%= link_to "Edit", edit_user_group_path(@user, group) %> </td>
                   <td><%= link_to 'Destroy', user_group_path(@user, group), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -44,7 +46,7 @@
             </tbody>
           </table>
 
-          <%= link_to 'New Category', new_user_group_path(@user) %>
+
         </div>
       </div>
     <% else %>
