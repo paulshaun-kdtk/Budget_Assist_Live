@@ -5,9 +5,9 @@ RSpec.describe Group, type: :model do
     it 'returns the specified number of recent payments' do
       group = Group.create(name: 'Test Group')
       payment1 = Payment.create(group:, amount: 50, created_at: 1.day.ago)
-      payment2 = Payment.create(group:, amount: 50,  created_at: 2.days.ago)
+      payment2 = Payment.create(group:, amount: 50, created_at: 2.days.ago)
       payment3 = Payment.create(group:, amount: 50, created_at: 3.days.ago)
-      payment4 = Payment.create(group:,amount: 50, created_at: 4.days.ago)
+      payment4 = Payment.create(group:, amount: 50, created_at: 4.days.ago)
 
       recent_payments = group.recent_payments(3)
 
@@ -46,4 +46,3 @@ RSpec.describe Group, type: :model do
     end
   end
 end
-
