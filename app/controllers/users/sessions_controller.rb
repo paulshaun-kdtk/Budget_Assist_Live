@@ -1,5 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
-  before_action :add_second_navbar, only: [:new, :create]
+  before_action :add_second_navbar, only: %i[new create]
 
   private
 

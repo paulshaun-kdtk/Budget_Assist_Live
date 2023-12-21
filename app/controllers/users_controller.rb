@@ -4,22 +4,22 @@ class UsersController < ApplicationController
     @user = current_user
     @show_first_navbar = true
   end
-  
+
   def show
     @user = current_user
     @show_second_navbar = true
   end
-  
+
   def new
     @group = Group.new
     @show_second_navbar = true
   end
-  
+
   def edit
     @user = user_params.find(params[:id])
     @show_second_navbar = true
   end
-  
+
   def create
     @show_second_navbar = true
     @group = Group.new(group_params)
