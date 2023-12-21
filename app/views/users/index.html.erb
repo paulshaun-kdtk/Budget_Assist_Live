@@ -8,10 +8,12 @@
 
   <div class="container-fluid">
 
+  <span><%= link_to 'New Category', new_user_group_path(@user) %></span>
+
     <% if @groups %> 
       <div class="row">
         <div class="col-md-12">
-          <h1>Categories</h1>
+          <h1 class="text text-soft text-center">Categories</h1>
           <table class="table table-hover">
             <thead>
               <tr>
@@ -37,7 +39,6 @@
                   </td>
                   <td><%= group.name %></td>
                   <td><%= group.user %></td>
-                  <td><%= link_to 'New Category', new_user_group_path(@user) %></td>
                   <td><%= link_to 'Detail', user_group_path(@user, group) %></td>
                   <td>  <%= link_to "Edit", edit_user_group_path(@user, group) %> </td>
                   <td><%= link_to 'Destroy', user_group_path(@user, group), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -49,7 +50,8 @@
 
         </div>
       </div>
-    <% else %>
+      <% else %>
+
       <h3>Create New Category </h3>
       <%= link_to 'New Category', new_user_group_path(@user) %>
     <% end %>
