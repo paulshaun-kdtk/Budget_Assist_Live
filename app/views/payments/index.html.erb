@@ -21,9 +21,8 @@
   <%= link_to "New payment", new_user_group_payment_path(@user, @group) %>
   <% end %>
   </div>
-
-  <%= link_to "New payment", new_user_group_payment_path(@user, @group) %>
+ 
   <div class="footer mt-5" >
-  <span class="btn btn-success" style="width: 100%"> Scan </span>
+  <span class="btn btn-success" style="width: 100%">  <%= link_to "New Transaction", new_user_group_payment_path(@user, @group), class: "text-light", style: "text-decoration: none;" %> </span>
   </div>
 </div>
