@@ -49,9 +49,8 @@
 
         </div>
       </div>
-      <span><%= link_to 'New Category', new_user_group_path(@user) %></span>
+      <%= link_to 'New Category', new_user_group_path(@user), class: "btn btn-success", style: "width: 90%;" %>
       <% else %>
-
 
       <h3>Create New Category </h3>
       <%= link_to 'New Category', new_user_group_path(@user), class: "btn btn-success", style: "width: 90%;" %>
