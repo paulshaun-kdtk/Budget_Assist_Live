@@ -18,7 +18,7 @@
   </div>
 <% else %>
   <p>No payments available.</p>
-  <%= link_to "New payment", new_user_group_payment_path(@user, @group) %>
+  <span class="btn btn-success" style="width: 100%">  <%= link_to "New Transaction", new_user_group_payment_path(@user, @group), class: "text-light", style: "text-decoration: none;" %> </span>
   <% end %>
   </div>
  

@@ -1,17 +1,15 @@
-<div class="container text-center mx-auto" style="padding: 5%;">
-        <div style="height: 50%;">
-        <h1 class="text-primary mb-4" > Welcome Budget Assist</h1>
+<div class="container d-flex flex-column justify-content-between text-center mx-auto" style="min-height: 100vh; padding: 5%;">
+    <div class="mt-5">
+        <h1 class="text-primary mb-4">Welcome Budget Assist</h1>
+        <h4 class="mb-5">Transform the way your money is used</h4>
+    </div>
 
-        <h4 class="mb-5"> Transform the way your money is used </h4>
-        </div>
-        
-        </div>
-
-        <footer class="mt-5">
-            <% if @user %>
-            <span class="btn btn-primary" style="width: 100%;">     <%= link_to "Home", users_path, style: "color: white;" %> </span>
-            <% else %>
-            <span class="btn btn-light mb-5" style="width: 100%;">   <%= link_to "Login", new_user_session_path %> </span>
-            <span class="btn btn-primary" style="width: 100%;">     <%= link_to "Register", new_user_registration_path, style: "color: white;" %> </span>
-            <% end %>
-        </footer>
+    <footer >
+        <% if @user %>
+        <span class="btn btn-primary" style="width: 100%;"> <%= link_to "Home", users_path, style: "color: white;" %> </span>
+        <% else %>
+        <span class="btn btn-light mb-2" style="width: 100%;"> <%= link_to "Login", new_user_session_path %> </span>
+        <span class="btn btn-primary" style="width: 100%;"> <%= link_to "Register", new_user_registration_path, style: "color: white;" %> </span>
+        <% end %>
+    </footer>
+</div>
