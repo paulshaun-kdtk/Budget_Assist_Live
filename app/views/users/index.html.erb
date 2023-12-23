@@ -49,11 +49,12 @@
 
         </div>
       </div>
-      <%= link_to 'New Category', new_user_group_path(@user), class: "btn btn-success", style: "width: 90%;" %>
+      <span><%= link_to 'New Category', new_user_group_path(@user), class: "btn btn-success", style: "width: 90%; margin-top: 50vh; %></span>
       <% else %>
 
+
       <h3>Create New Category </h3>
-      <%= link_to 'New Category', new_user_group_path(@user), class: "btn btn-success", style: "width: 90%;" %>
+      <%= link_to 'New Category', new_user_group_path(@user), class: "btn btn-success", style: "width: 90%; margin-top: 50vh;" %>
     <% end %>
 
   </div>
