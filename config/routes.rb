@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'splash#index'
 
-  resources :users do
+resources :users, path: 'categories' do
     resources :groups do
       resources :payments
     end
