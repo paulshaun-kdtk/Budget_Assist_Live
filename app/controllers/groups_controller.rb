@@ -5,20 +5,24 @@ class GroupsController < ApplicationController
   def index
     @user = current_user
     @groups = Group.where(user: @user)
+    @show_second_navbar = true
   end
 
   def show
     @group = Group.find(params[:id])
     @recent_payments = @group.recent_payments
     @total_amount = @group.total_amount
+    @show_second_navbar = true
   end
 
   def new
     @user = current_user
     @group = Group.new
+    @show_second_navbar = true
   end
 
   def create
+    @show_second_navbar = true
     @group = Group.new(group_params)
     @group.user = current_user.name
     if @group.save
@@ -30,6 +34,7 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
+    @show_second_navbar = true
   end
 
   def update

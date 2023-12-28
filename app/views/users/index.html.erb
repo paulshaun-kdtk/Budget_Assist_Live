@@ -11,7 +11,7 @@
     <% if @groups %> 
       <div class="row">
         <div class="col-md-12">
-          <h1>Categories</h1>
+          <h1 class="text text-soft text-center">Categories</h1>
           <table class="table table-hover">
             <thead>
               <tr>
@@ -19,6 +19,7 @@
                 <th scope="col">Icon</th>
                 <th scope="col">Name</th>
                 <th scope="col">User</th>
+                <th scope="col">total Amount</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -36,6 +37,7 @@
                   </td>
                   <td><%= group.name %></td>
                   <td><%= group.user %></td>
+                  <td><%= group.total_amount %></td>
                   <td><%= link_to 'Detail', user_group_path(@user, group) %></td>
                   <td>  <%= link_to "Edit", edit_user_group_path(@user, group) %> </td>
                   <td><%= link_to 'Destroy', user_group_path(@user, group), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -44,12 +46,15 @@
             </tbody>
           </table>
 
-          <%= link_to 'New Category', new_user_group_path(@user) %>
+
         </div>
       </div>
-    <% else %>
+      <span><%= link_to 'New Category', new_user_group_path(@user), class: "btn btn-success", style: "width: 10 `0%; margin-top: 50vh;" %></span>
+      <% else %>
+
+
       <h3>Create New Category </h3>
-      <%= link_to 'New Category', new_user_group_path(@user) %>
+      <%= link_to 'New Category', new_user_group_path(@user), class: "btn btn-success", style: "width: 100%; margin-top: 50vh;" %>
     <% end %>
 
   </div>

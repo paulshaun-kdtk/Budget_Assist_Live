@@ -1,4 +1,5 @@
 class Payment < ApplicationRecord
   belongs_to :group, optional: true
-  # has_many :groups
+
+  validates :amount, presence: true, numericality: { greater_than: 0 }
 end

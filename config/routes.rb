@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
   }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'splash#index'
 
-  resources :users do
+  resources :users, path: 'categories' do
     resources :groups do
       resources :payments
     end

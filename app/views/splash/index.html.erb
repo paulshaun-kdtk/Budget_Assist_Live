@@ -1,47 +1,15 @@
-<div class="container">
+<div class="container d-flex flex-column justify-content-between text-center mx-auto" style="min-height: 100vh; padding: 5%;">
+    <div class="mt-5">
+        <h1 class="text-primary mb-4">Welcome Budget Assist</h1>
+        <h4 class="mb-5">Transform the way your money is used</h4>
+    </div>
 
-<h1 class="text-primary"> Welcome Budget Assist</h1>
-
-<h4> Transform the way your money is used </h4>
-
+    <footer >
+        <% if @user %>
+        <span class="btn btn-primary" style="width: 100%;"> <%= link_to "Home", users_path, style: "color: white;" %> </span>
+        <% else %>
+        <span class="btn btn-light mb-2" style="width: 100%;"> <%= link_to "Login", new_user_session_path %> </span>
+        <span class="btn btn-primary" style="width: 100%;"> <%= link_to "Register", new_user_registration_path, style: "color: white;" %> </span>
+        <% end %>
+    </footer>
 </div>
-
-<div class="links">
-    <% if @user %>
-        <%= link_to "Home", users_path %>
-    <% else %>
-        <%= link_to "Login", new_user_session_path %>
-    <% end %>
-</div>
-
-<style>
-    .container{
-        margin: 0 auto;
-        background-color: blue;
-        padding: 20px;
-        height: 60%;
-    }
-
-    .container  h1 {
-        text-align: center;
-        color: white;
-        font-size: 30px;
-        font-family: 'Times New Roman', Times, serif;
-    }
-
-    .container h4 {
-        text-align: center;
-        color: white;
-        font-family: 'Times New Roman', Times, serif;
-    }
-
-    .links {
-        text-align: center;
-        padding: 20px;
-    }
-
-    body {
-        background-color: #f2f2f2;
-    }
-
-</style>

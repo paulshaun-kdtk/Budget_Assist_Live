@@ -5,6 +5,7 @@ class PaymentsController < ApplicationController
 
   def index
     @payments = @group.payments.all
+    @show_second_navbar = true
   end
 
   def show
@@ -13,6 +14,7 @@ class PaymentsController < ApplicationController
 
   def new
     @payment = Payment.new
+    @show_second_navbar = true
   end
 
   def create
