@@ -49,12 +49,12 @@
 
         </div>
       </div>
-      <span><%= link_to 'New Category', new_user_group_path(@user), class: "btn btn-success", style: "width: 10 `0%; margin-top: 50vh;" %></span>
+      <button class="btn btn-success" style="width: 100%; position: fixed; bottom: 2%; left: 0;" onclick="window.location.href='<%= new_user_group_path(@user) %>'">New Category</button>
       <% else %>
 
 
       <h3>Create New Category </h3>
-      <%= link_to 'New Category', new_user_group_path(@user), class: "btn btn-success", style: "width: 100%; margin-top: 50vh;" %>
+      <button class="btn btn-success" style="width: 100%; position: fixed; bottom: 2%; left: 0;" onclick="window.location.href='<%= new_user_group_path(@user) %>'">New Category</button>
     <% end %>
 
   </div>

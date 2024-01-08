@@ -1,4 +1,4 @@
-<div class="container-fluid mx-auto row-5" >
+<div class="container-fluid mx-auto row-5 text-center mt-5" >
   <%= form_with(model: group, url: group.persisted? ? user_group_path(@user, group) : user_groups_path(@user), local: true, method: group.persisted? ? :patch : :post, multipart: true) do |form| %>
 
     <div class="mb-3">
@@ -11,7 +11,7 @@
     <%= form.file_field :icon, class: "form-control" %>
   </div> 
 
-    <%= form.submit "Submit", class: "btn btn-primary" %>
+    <%= form.submit "Submit", class: "btn btn-success" %>
 
     <% end %>
 </div>
