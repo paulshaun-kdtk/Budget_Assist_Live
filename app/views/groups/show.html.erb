@@ -5,20 +5,19 @@
 <div class="d-flex mb-3" style="justify-content: space-between">  
   <%= image_tag @group.icon, style: "width: 150px; height: 100px;" if @group.icon.attached? %>
   <h1> <%=  @group.name %> </h1>
-  <p>Total: $ <%= @total_amount %></p>
-</div>
-
+  </div>
+  
 
   <h2>Recent transactions</h2>
       <% @recent_payments.each do |payment| %>
-      <ul class="list-group row">
-      <li class="list-group-item d-flex" style="justify-content: space-evenly;"><span> <%= payment.name %> </span> | <span> $ <%= payment.amount %> </span> </li>
+      <ul class="list-group row mt-3" style="text-align: left;">
+      <li class="list-group-item d-flex" style="flex-direction: column;"><span style="font-size: 18px; font-weight: bold;"> <%= payment.name %></span>   <span> <%= payment.created_at.strftime("%Y-%m-%d") %> at <%= payment.created_at.strftime("%H:%M") %> </span> </li>
       </ul>
       <% end %>
-
-  <%= link_to "view all transactions", user_group_payments_path(@user, @group) %> 
-  
-  <%= link_to "Back", users_path %>
-
+      
+  <div class="mt-3" style="text-align: left">    
+      <p class="mb-4 d-flex" style="justify-content: space-between;"><span>Total Amount: </span> <span> $ <%= @total_amount %> </span> </p>    
+      <%= link_to "view all transactions", user_group_payments_path(@user, @group) %> 
+  </div>
   <div>
-</div>
+  </div>

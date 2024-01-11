@@ -15,21 +15,15 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th scope="col"></th>
                 <th scope="col">Icon</th>
                 <th scope="col">Name</th>
                 <th scope="col">User</th>
-                <th scope="col">total Amount</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-
+                <th scope="col">total</th>          
               </tr>
             </thead>
             <tbody>
               <% @groups.each do |group| %>
                 <tr>
-                  <th scope="row"></th>
                   <td>
                   <span>
                   <%= image_tag group.icon, style: "width: 150px; height: 100px;" if group.icon.attached? %>
@@ -37,10 +31,15 @@
                   </td>
                   <td><%= group.name %></td>
                   <td><%= group.user %></td>
-                  <td><%= group.total_amount %></td>
+                  <td>  <%= group.total_amount %></td>
+                  </tr>
+                  <tr>
+                  <td><%= group.created_at.strftime("%Y-%m-%d") %> at <%= group.created_at.strftime("%H:%M") %> </td>
                   <td><%= link_to 'Detail', user_group_path(@user, group) %></td>
                   <td>  <%= link_to "Edit", edit_user_group_path(@user, group) %> </td>
                   <td><%= link_to 'Destroy', user_group_path(@user, group), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+               
+
                   </tr>
               <% end %>
             </tbody>
@@ -49,13 +48,14 @@
 
         </div>
       </div>
-      <button class="btn btn-success" style="width: 100%; position: fixed; bottom: 2%; left: 0;" onclick="window.location.href='<%= new_user_group_path(@user) %>'">New Category</button>
+      <div class="btn btn-success" style="width: 100%; position: fixed; bottom: 2%; left: 0;">      <button class="btn btn-success" style="width: 95%; border: 1px solid white;" onclick="window.location.href='<%= new_user_group_path(@user) %>'">New Category</button> </div>
+
       <% else %>
 
 
       <h3>Create New Category </h3>
-      <button class="btn btn-success" style="width: 100%; position: fixed; bottom: 2%; left: 0;" onclick="window.location.href='<%= new_user_group_path(@user) %>'">New Category</button>
-    <% end %>
+<div class="btn btn-primary" style="width: 100%;">      <button class="btn btn-success" style="width: 95%; position: fixed; bottom: 2%; left: 0; border: 1px solid black;" onclick="window.location.href='<%= new_user_group_path(@user) %>'">New Category</button>
+   </div> <% end %>
 
   </div>
 
