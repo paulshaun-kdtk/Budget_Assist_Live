@@ -32,7 +32,7 @@
 **Budget-App** is a web app designed to assist users with their personal finances
 
 **Video-Presentation** : https://www.loom.com/share/b12d950563214ce0a0ada22e760b77da?sid=bf358665-afbb-4a48-a3e3-f3f90ef54ca0 <br />
-**Live Example** : https://budget-app-b2jg.onrender.com/
+**Live Example** : https://budget-app-23m0.onrender.com/
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
