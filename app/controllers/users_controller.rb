@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @groups = Group.all
     @user = current_user
     @show_first_navbar = true
+    @total_credits = total_credits
   end
 
   def show
@@ -45,4 +46,14 @@ class UsersController < ApplicationController
   def user_params
     params.require(:current_user).permit(:name, :email, :password, :password_confirmation, :icon)
   end
+end
+
+def total_credits
+  total_credits = 0
+
+  Group.all.each do |group|
+    total_credits += group.total_amount
+  end
+
+  total_credits
 end
