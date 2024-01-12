@@ -1,6 +1,6 @@
 databases:
   - name: budget_assist
-    databaseName: <%= ENV['DATABASE_NAME'] %>
+    databaseName: DATABASE_NAME
     user: budget_app_bjvy_user
     plan: free
 
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: <%= ENV['DATABASE_NAME'] %>
+          name: DATABASE_NAME
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
